@@ -12,11 +12,10 @@ const ingredients = [
 const createItemRef = (item) => {
   const itemRef = document.createElement("li");
   itemRef.textContent = item;
-  return itemRef;
+  fragment.appendChild(itemRef);
 };
 
-const ingredientsArrRef = ingredients.map((ingredient) =>
-  createItemRef(ingredient)
-);
+const fragment = document.createDocumentFragment();
+ingredients.map((ingredient) => createItemRef(ingredient));
 const ingredientsListRef = document.querySelector("#ingredients");
-ingredientsListRef.append(...ingredientsArrRef);
+ingredientsListRef.appendChild(fragment);

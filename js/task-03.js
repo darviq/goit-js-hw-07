@@ -26,9 +26,10 @@ const createItemRef = (item) => {
     "beforeend",
     `<img src="${item.url}" alt="${item.alt}">`
   );
-  return itemRef;
+  fragment.appendChild(itemRef);
 };
 
-const imagesArrRef = images.map((img) => createItemRef(img));
+const fragment = document.createDocumentFragment();
+images.map((img) => createItemRef(img));
 const galleryListRef = document.querySelector("#gallery");
-galleryListRef.append(...imagesArrRef);
+galleryListRef.appendChild(fragment);
