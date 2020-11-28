@@ -20,16 +20,10 @@ const images = [
   },
 ];
 
-const createItemRef = (item) => {
-  const itemRef = document.createElement("li");
-  itemRef.insertAdjacentHTML(
-    "beforeend",
-    `<img src="${item.url}" alt="${item.alt}">`
-  );
-  fragment.appendChild(itemRef);
+const createElementString = (item) => {
+  return `<li><img src="${item.url}" alt="${item.alt}"></li>`;
 };
 
-const fragment = document.createDocumentFragment();
-images.map((img) => createItemRef(img));
+const fragment = images.map((img) => createElementString(img)).join('');
 const galleryListRef = document.querySelector("#gallery");
-galleryListRef.appendChild(fragment);
+galleryListRef.insertAdjacentHTML('beforeend', fragment);
