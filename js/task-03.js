@@ -20,10 +20,11 @@ const images = [
   },
 ];
 
+const galleryListRef = document.querySelector("#gallery");
+
 const createElementString = (item) => {
   return `<li><img src="${item.url}" alt="${item.alt}"></li>`;
 };
 
 const fragment = images.map((img) => createElementString(img)).join('');
-const galleryListRef = document.querySelector("#gallery");
 galleryListRef.insertAdjacentHTML('beforeend', fragment);
