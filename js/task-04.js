@@ -4,7 +4,7 @@ const valueRef = document.querySelector("#value");
 const decrBtnRef = document.querySelector("[data-action=decrement]");
 const incrBtnRef = document.querySelector("[data-action=increment]");
 
-let counterValue = parseInt(valueRef.textContent);
+let counterValue = Number(valueRef.textContent);
 
 function decrement() {
   counterValue -= 1;

@@ -1,7 +1,7 @@
 "use strict";
 
 const inputRef = document.querySelector("#validation-input");
-const inputSymbols = parseInt(inputRef.dataset.length);
+const inputSymbols = Number(inputRef.dataset.length);
 
 function correctOrNo() {
   if (inputRef.value.length === inputSymbols) {
