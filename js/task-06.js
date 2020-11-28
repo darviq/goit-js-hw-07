@@ -3,8 +3,6 @@
 const inputRef = document.querySelector("#validation-input");
 const inputSymbols = parseInt(inputRef.dataset.length);
 
-inputRef.addEventListener("change", correctOrNo);
-
 function correctOrNo() {
   if (inputRef.value.length === inputSymbols) {
     inputRef.classList.remove("invalid");
@@ -14,3 +12,5 @@ function correctOrNo() {
     inputRef.classList.add("invalid");
   }
 }
+
+inputRef.addEventListener("change", correctOrNo);

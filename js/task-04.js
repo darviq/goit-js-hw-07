@@ -1,12 +1,10 @@
 "use strict";
 
 const valueRef = document.querySelector("#value");
-let counterValue = parseInt(valueRef.textContent);
 const decrBtnRef = document.querySelector("[data-action=decrement]");
 const incrBtnRef = document.querySelector("[data-action=increment]");
 
-decrBtnRef.addEventListener("click", decrement);
-incrBtnRef.addEventListener("click", increment);
+let counterValue = parseInt(valueRef.textContent);
 
 function decrement() {
   counterValue -= 1;
@@ -17,3 +15,6 @@ function increment() {
   counterValue += 1;
   valueRef.textContent = counterValue;
 }
+
+decrBtnRef.addEventListener("click", decrement);
+incrBtnRef.addEventListener("click", increment);
