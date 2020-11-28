@@ -1,15 +1,10 @@
 "use strict";
 
-const categListRef = document.querySelector("#categories");
-const categRefs = categListRef.querySelectorAll(".item");
-const categAmount = categRefs.length;
-console.log(`В списке ${categAmount} категории.`);
+const categRefs = document.querySelectorAll(".item");
+console.log(`В списке ${categRefs.length} категории.`);
 
 categRefs.forEach((category) => {
-  const categoryHeaderRef = category.querySelector("h2");
-  const categoryHeaderText = categoryHeaderRef.textContent;
-  const elementAmount = category.querySelectorAll("li").length;
   console.log(
-    `Категория: ${categoryHeaderText}\nКоличество элементов: ${elementAmount}`
+    `Категория: ${category.firstElementChild.textContent}\nКоличество элементов: ${category.lastElementChild.children.length}`
   );
 });
